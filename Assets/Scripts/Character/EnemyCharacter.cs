@@ -38,7 +38,7 @@ public class EnemyCharacter : Character
                 MovableComponent.Move(direction);
                 MovableComponent.Rotation(direction);
 
-                if (Vector3.Distance(targetCharacter.transform.position, transform.position) < 3
+                if (Vector3.Distance(targetCharacter.transform.position, transform.position) < 2
                      && timeBetweenAttackCounter <= 0)
                      {
                         DamageComponent.MakeDamage(targetCharacter);
@@ -52,6 +52,7 @@ public class EnemyCharacter : Character
                 break; 
         }
     }
+    
 
     
 }
