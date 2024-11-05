@@ -8,7 +8,8 @@ public class PlayerCharacter : Character
     {
         base.Start();
         LiveComponent = new CharacterLiveComponent();
-    }
+    } 
+        
     public override void Update()
     {
         float moveHorizontal = Input. GetAxis("Horizontal");

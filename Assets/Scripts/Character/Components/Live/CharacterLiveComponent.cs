@@ -32,14 +32,16 @@ public class CharacterLiveComponent : ILiveComponent
    {
       Health = MaxHealth;
    }
-    public void SetDamage(float damage)
-    {
-        Health -= damage;
+   
+   public void SetDamage(float damage)
+   {
+      Health -= damage;
         
-        Debug.Log("Get damage = " + damage);
-    }
-    private void SetDeath()
-    {
-        Debug.Log("Character is death");
-    }
+      Debug.Log("Get damage = " + damage);
+   }
+
+   private void SetDeath()
+   {
+      Debug.Log("Character is death");
+   }
 }   

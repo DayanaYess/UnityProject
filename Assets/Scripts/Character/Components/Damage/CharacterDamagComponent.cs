@@ -11,6 +11,4 @@ public class CharacterDamagComponent : IDamageComponent
         if (characterTarget.LiveComponent != null)
         characterTarget.LiveComponent.SetDamage(Damage);
     }
-
-
 }

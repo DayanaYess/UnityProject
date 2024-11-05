@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyCharacter : Character 
 {
-
     public float speed = 3.0f;       
     private float originalSpeed;      
     private bool isFrozen = false; 
@@ -23,8 +22,9 @@ public class EnemyCharacter : Character
         LiveComponent = new ImmortalLiveComponent();
         DamageComponent = new CharacterDamagComponent();
 
-          originalSpeed = speed;  
+        originalSpeed = speed;  
     }
+
     public override void Update()
     {
         switch (currentState)
@@ -48,11 +48,7 @@ public class EnemyCharacter : Character
 
                       if (timeBetweenAttackCounter > 0)
                       timeBetweenAttackCounter-= Time.deltaTime;
-
                 break; 
         }
     }
-    
-
-    
 }

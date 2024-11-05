@@ -10,20 +10,16 @@ public class CharacterData : MonoBehaviour
     [SerializeField] private CharacterController characterController;
 
     public float DefaultSpeed => speed;
-
     public float TimeBetweenattacks => timeBetweenAttacks;
-
     public Transform CharacterTransform => characterTransform;
-
-  
-     public CharacterController CharacterController
-     {
+    public CharacterController CharacterController
+    {
         get
         {
             return characterController;
         
         }
-     }
+    }
   
 }
 

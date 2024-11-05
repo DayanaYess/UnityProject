@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface ILiveComponent 
 {
-   float MaxHealth {get;  }
-   float Health { get;  }
+   float MaxHealth { get; }
+   float Health { get; }
 
    public void SetDamage(float damage);
 }
