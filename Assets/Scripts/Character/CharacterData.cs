@@ -5,12 +5,13 @@ using UnityEngine;
 public class CharacterData : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private int scoreCost;
     [SerializeField] private float timeBetweenAttacks;
     [SerializeField] private Transform characterTransform;
     [SerializeField] private CharacterController characterController;
 
     public float DefaultSpeed => speed;
-    public float TimeBetweenattacks => timeBetweenAttacks;
+    public int ScoreCost => scoreCost;
     public Transform CharacterTransform => characterTransform;
     public CharacterController CharacterController
     {

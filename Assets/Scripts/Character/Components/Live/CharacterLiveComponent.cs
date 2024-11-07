@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterLiveComponent : ILiveComponent
 {
+   private Character selfCharacter;
    private float currentHealth;
 
    public float MaxHealth
@@ -42,6 +44,15 @@ public class CharacterLiveComponent : ILiveComponent
 
    private void SetDeath()
    {
+      OnCharacterDeath?.Invoke();
       Debug.Log("Character is death");
+   }
+
+   public void Initialize(Character selfCharacter)
+   {
+      throw new NotImplementedException(selfCharacter)
+      {
+         this.selfCharacter = selfCharacter;
+      }
    }
 }   

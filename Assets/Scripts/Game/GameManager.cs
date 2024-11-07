@@ -46,10 +46,14 @@ public class GameManager : MonoBehaviour
 
       Character player = characterFactory.GetCharacter(CharacterType.Player);
       player.transform.position = Vector3.zero;
+      player. gameObject.SetActive(true);
       player.Initialize();
+      player.LiveComponent.OnCharacterDeath += CharacterDeathHandler;
 
       gameSessionTime = 0;
       timeBetweenEnemySpawn = gameData.TimeBetweenEnemySpawn;
+
+      scoreSystem.StartGame();
 
       isGameActive = true;
    }  
@@ -78,12 +82,15 @@ public class GameManager : MonoBehaviour
       switch (deathCharacter.CharacterType)
       {
          case CharacterType.Player:
+         GameOver();
            break;
             
          case CharacterType.DefaultEnemy:
-           scoreSystem.AddScore();
+           scoreSystem.AddScore(deathCharacter.CharacterData.ScoreCost);
            break;  
       }
+      deathCharacter.gameObject.SetActive(false);
+      characterFactory.ReturnCharacter(deathCharacter);
    }
    private void SpawnEnemy()
    {
@@ -92,6 +99,7 @@ public class GameManager : MonoBehaviour
       enemy.transform.position = new Vector3(playerPosition. x + GetOffset(), 0, playerPosition. z 
       + GetOffset());
       enemy.Initialize();
+      enemy.LiveComponent.OnCharacterDeath += CharacterDeathHandler;
 
 
 
@@ -104,6 +112,7 @@ public class GameManager : MonoBehaviour
    }
    private void GameVictory()
       {
+         scoreSystem.EndGame();
          Debug.Log("Vectory");
          isGameActive = false;
       }

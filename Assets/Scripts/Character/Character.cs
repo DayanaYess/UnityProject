@@ -11,6 +11,7 @@ public abstract class Character : MonoBehaviour
     public CharacterType CharacterType => CharacterType;
     public CharacterData characterdata => characterdata;
 
+    public virtual Character CharacterTarget { get; }
     public IMovable MovableComponent { get; protected set; }
     public ILiveComponent LiveComponent { get; protected set; }
     public IDamageComponent DamageComponent { get; protected set; }
